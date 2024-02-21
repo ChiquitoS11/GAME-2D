@@ -13,7 +13,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JToggleButton;
 
 public class Imagen extends JPanel {
 
@@ -27,10 +26,9 @@ public class Imagen extends JPanel {
 
     private ImageIcon imagenFlippeada;
     
+    
     // constructor
-
     public Imagen(URL rutaImagen) {
-
         this.rutaImagen = rutaImagen;
         
         this.imagenImageIcon = new ImageIcon(rutaImagen);
@@ -59,22 +57,9 @@ public class Imagen extends JPanel {
     
     public Icon imgToContainer(Component jLabel){
         Icon icon = new ImageIcon(imagenImageIcon.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), Image.SCALE_DEFAULT));
+        return icon;
+    }
 
-        return icon;
-    }
-    
-    public Icon ajustarIMGtoTOGGLEBUTTON(JToggleButton imagen){
-        Icon icon = new ImageIcon(imagenImageIcon.getImage().getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_DEFAULT));
-        
-        return icon;
-    }
-    
-    
-    public Icon ajustarIMGtoJBUTTON(Component boton) {
-        Icon icon = new ImageIcon(imagenImageIcon.getImage().getScaledInstance(boton.getWidth(), boton.getHeight(), Image.SCALE_DEFAULT));
-        
-        return icon;
-    }
     
     public Icon ajustarIMGtoJLABELInvert(Component imagen, boolean horizontal){
         int width = imagenIMAGE.getWidth(null);

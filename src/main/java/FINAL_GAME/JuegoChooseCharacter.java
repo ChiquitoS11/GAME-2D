@@ -156,7 +156,7 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
         AnteriorPersonaje.setEnabled(false);
         
         // btn seleccionar
-        SeleccionarPersonaje.setIcon(menheraX.ajustarIMGtoTOGGLEBUTTON(SeleccionarPersonaje));
+        SeleccionarPersonaje.setIcon(menheraX.imgToContainer(SeleccionarPersonaje));
         
         SeleccionarPersonaje.setFocusPainted(false);
         SeleccionarPersonaje.setBorderPainted(false);
@@ -212,7 +212,7 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     
     private void SeleccionarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarPersonajeActionPerformed
         if (fotoMenheraX) {
-            SeleccionarPersonaje.setIcon(menheraO.ajustarIMGtoTOGGLEBUTTON(SeleccionarPersonaje));
+            SeleccionarPersonaje.setIcon(menheraO.imgToContainer(SeleccionarPersonaje));
             gotoGame.setEnabled(true);
             AnteriorPersonaje.setEnabled(false);
             SiguientePersonaje.setEnabled(false);
@@ -220,7 +220,7 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
         }
         
         if (!fotoMenheraX) {
-            SeleccionarPersonaje.setIcon(menheraX.ajustarIMGtoTOGGLEBUTTON(SeleccionarPersonaje));
+            SeleccionarPersonaje.setIcon(menheraX.imgToContainer(SeleccionarPersonaje));
             gotoGame.setEnabled(false);
             
             if (paginaActual == 1) {
