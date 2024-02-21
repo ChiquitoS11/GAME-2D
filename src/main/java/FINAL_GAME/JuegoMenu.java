@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package FINAL_GAME;
 
 import java.awt.Desktop;
@@ -20,6 +16,7 @@ public class JuegoMenu extends javax.swing.JFrame {
     private final Imagen ghImg = new Imagen(getClass().getResource("/resources/githubIcon.png"));
     private final Imagen igImg = new Imagen(getClass().getResource("/resources/instagramIcon.png"));
     private final Imagen fp = new Imagen(getClass().getResource("/resources/fondoMenu.gif"));
+    private final Imagen btnCerrarImg = new Imagen(getClass().getResource("/resources/btnCerrarFrame.png"));
     
     
     /**
@@ -45,8 +42,10 @@ public class JuegoMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         GitHubLabel = new javax.swing.JLabel();
         InstagramLabel = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,32 +78,50 @@ public class JuegoMenu extends javax.swing.JFrame {
             }
         });
 
+        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(70, 549, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(99, 99, 99))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(InstagramLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(InstagramLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(700, 700, 700)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(75, 75, 75))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(383, 383, 383)
+                .addComponent(jButton1)
+                .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(225, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(57, 57, 57)
-                        .addComponent(InstagramLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(9, 9, 9))
+                .addGap(425, 425, 425)
+                .addComponent(InstagramLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
 
         pack();
@@ -113,7 +130,8 @@ public class JuegoMenu extends javax.swing.JFrame {
     private void ajustesVisuales(){
         GitHubLabel.setIcon(ghImg.imgToContainer(GitHubLabel));
         InstagramLabel.setIcon(igImg.imgToContainer(InstagramLabel));
-        
+        btnCerrar.setIcon(btnCerrarImg.imgToContainer(btnCerrar));
+
         
         repaint();
     }
@@ -156,6 +174,20 @@ public class JuegoMenu extends javax.swing.JFrame {
         
         repaint();
     }//GEN-LAST:event_InstagramLabelMouseExited
+
+    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarMouseClicked
+    private void btnCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseEntered
+        btnCerrar.setIcon(btnCerrarImg.cambiarOpacidad(0.5f, btnCerrar));
+        
+        repaint();
+    }//GEN-LAST:event_btnCerrarMouseEntered
+    private void btnCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseExited
+        btnCerrar.setIcon(btnCerrarImg.imgToContainer(btnCerrar));        
+        
+        repaint();
+    }//GEN-LAST:event_btnCerrarMouseExited
     
     private void abrirEnlace(String enlace) {
         try{
@@ -175,6 +207,7 @@ public class JuegoMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel GitHubLabel;
     public javax.swing.JLabel InstagramLabel;
+    private javax.swing.JLabel btnCerrar;
     public javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
