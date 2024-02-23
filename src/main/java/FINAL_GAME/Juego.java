@@ -12,6 +12,9 @@ import java.awt.event.KeyEvent;
 public class Juego extends javax.swing.JFrame {
     boolean activarSecreto = false;
     
+    // icono taskbar
+    private final Imagen taskbarIMG = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
+    
     Personaje mainCharacter = new Personaje(this);
     Imagen mainCharacterImg = new Imagen(getClass().getResource("/resources/ISAAC.png"));
     Imagen fondoImg = new Imagen(getClass().getResource("/resources/fondoChooseCharacter.gif"));
@@ -107,6 +110,8 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyPressed
 
     public void ajustesVisuales(){
+        this.setIconImage(taskbarIMG.getImagenIMAGE());
+        
         personajeLabel.setIcon(mainCharacterImg.imgToContainer(personajeLabel)); 
     }
     

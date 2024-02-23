@@ -13,7 +13,7 @@ import Dependencias.Imagen;
  */
 public class JuegoMenu extends javax.swing.JFrame {
     
-    // icono de barra de tareas
+    // icono taskbar
     private final Imagen iconoWindows = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
     
     // redes sociales

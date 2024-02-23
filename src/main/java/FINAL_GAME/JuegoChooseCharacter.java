@@ -14,6 +14,10 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     private final byte paginaMaxima = 4;
 
     boolean fotoMenheraX = true;
+    
+    // icono taskbar
+    private final Imagen iconoWindows = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
+    
     private final Imagen monita1 = new Imagen(getClass().getResource("/resources/mashiroWallpaper.gif"));
     private final Imagen monita2 = new Imagen(getClass().getResource("/resources/asd.jpg"));
     private final Imagen monita3 = new Imagen(getClass().getResource("/resources/monitachina3.jpg"));
@@ -147,6 +151,10 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ajustesVisuales() {
+        
+        // icono taskbar
+        this.setIconImage(iconoWindows.getImagenIMAGE());
+        
         // contenedor-img
         imagenes.setIcon(monita1.imgToContainer(imagenes));
         AnteriorPersonaje.setEnabled(false);
