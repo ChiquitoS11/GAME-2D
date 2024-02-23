@@ -1,6 +1,7 @@
 package Clases;
 
 import FINAL_GAME.Juego;
+import javax.swing.JLabel;
 
 /**
  *
@@ -9,12 +10,14 @@ import FINAL_GAME.Juego;
 public class Personaje {
 
     // atributos
-    private Juego juego;
+    private final Juego jg;
     private int velocidadMovimiento = 5;
+    private JLabel test;
     
     // constructor
-    public Personaje(Juego juego) {
-        this.juego = juego;
+    public Personaje(Juego juego, JLabel test) {
+        this.jg = juego;
+        this.test = test;
 //        Sonido saltar = new Sonido(getClass().getResource("/resources/salto.wav"));
 //        Sonido bajar = new Sonido(getClass().getResource("/resources/onichan.wav"));
 
@@ -26,29 +29,33 @@ public class Personaje {
     donde esta el personaje
     */
     public int getX() {
-        return juego.personajeLabel.getX();
+        
+        return test.getX();
     }
 
     public int getY() {
-        return juego.personajeLabel.getY();
+        return test.getY();
     }
     
     // metodos
     public void moverArriba() {
-        juego.personajeLabel.setLocation(getX(), (getY() - velocidadMovimiento));
+        test.setLocation(getX(), (getY() - velocidadMovimiento));
+        jg.repaint();
     }
 
     public void moverAbajo() {
-        juego.personajeLabel.setLocation(getX(), (getY() + velocidadMovimiento));
+        test.setLocation(getX(), (getY() + velocidadMovimiento));
+        jg.repaint();
     }
 
     public void moverIzquierda() {
-        juego.personajeLabel.setLocation((getX() - velocidadMovimiento), (getY()));
+        test.setLocation((getX() - velocidadMovimiento), (getY()));
+        jg.repaint();
     }
 
     public void moverDerecha() {
-        juego.personajeLabel.setLocation((getX() + velocidadMovimiento), (getY()));
-        juego.personajeLabel.repaint();
+        test.setLocation((getX() + velocidadMovimiento), (getY()));
+        jg.repaint();
     }
-
+    
 }

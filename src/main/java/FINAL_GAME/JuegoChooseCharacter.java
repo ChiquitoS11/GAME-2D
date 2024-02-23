@@ -1,6 +1,9 @@
 package FINAL_GAME;
 
 import Dependencias.Imagen;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 
 /**
  *
@@ -53,25 +56,15 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NombrePersonaje = new javax.swing.JFrame();
         AnteriorPersonaje = new javax.swing.JButton();
         SiguientePersonaje = new javax.swing.JButton();
         SeleccionarPersonaje = new javax.swing.JToggleButton();
         imagenes = new javax.swing.JLabel();
         gotoGame = new javax.swing.JButton();
 
-        javax.swing.GroupLayout NombrePersonajeLayout = new javax.swing.GroupLayout(NombrePersonaje.getContentPane());
-        NombrePersonaje.getContentPane().setLayout(NombrePersonajeLayout);
-        NombrePersonajeLayout.setHorizontalGroup(
-            NombrePersonajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 532, Short.MAX_VALUE)
-        );
-        NombrePersonajeLayout.setVerticalGroup(
-            NombrePersonajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         AnteriorPersonaje.setText("Anterior");
         AnteriorPersonaje.addActionListener(new java.awt.event.ActionListener() {
@@ -251,14 +244,14 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
         j.setResizable(false);
         j.setLocationRelativeTo(null);
         
-        NombrePersonaje.setVisible(true);
-        
+        Border bordePersonalizado = BorderFactory.createLineBorder(Color.BLACK, 3);
+        j.getRootPane().setBorder(bordePersonalizado);
+        j.setTitle("Labyrinth");
     }//GEN-LAST:event_gotoGameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AnteriorPersonaje;
-    private javax.swing.JFrame NombrePersonaje;
     public javax.swing.JToggleButton SeleccionarPersonaje;
     private javax.swing.JButton SiguientePersonaje;
     private javax.swing.JButton gotoGame;

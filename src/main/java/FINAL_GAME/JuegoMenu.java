@@ -6,6 +6,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import Dependencias.Imagen;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 
 /**
  *
@@ -47,7 +50,7 @@ public class JuegoMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnPlay = new javax.swing.JButton();
         GitHubLabel = new javax.swing.JLabel();
         InstagramLabel = new javax.swing.JLabel();
         btnCerrar = new javax.swing.JLabel();
@@ -55,10 +58,10 @@ public class JuegoMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnPlay.setText("jButton1");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnPlayActionPerformed(evt);
             }
         });
 
@@ -108,19 +111,17 @@ public class JuegoMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(InstagramLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(700, 700, 700)
-                        .addComponent(jButton1))
-                    .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPlay))
+                    .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(383, 383, 383)
-                .addComponent(jButton1)
+                .addGap(367, 367, 367)
+                .addComponent(btnPlay)
                 .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(425, 425, 425)
@@ -164,13 +165,19 @@ public class JuegoMenu extends javax.swing.JFrame {
         repaint();
     }//GEN-LAST:event_GitHubLabelMouseExited
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
+        
         JuegoChooseCharacter jcc = new JuegoChooseCharacter(this);
         jcc.setVisible(true);
         jcc.setResizable(false);
         jcc.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        
+        Border bordePersonalizado = BorderFactory.createLineBorder(Color.BLACK, 3);
+        jcc.getRootPane().setBorder(bordePersonalizado);
+        jcc.setTitle("Choose a Character");
+    }//GEN-LAST:event_btnPlayActionPerformed
 
     private void InstagramLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InstagramLabelMouseEntered
         InstagramLabel.setIcon(ghImg.cambiarOpacidad(0.5f, InstagramLabel));
@@ -216,6 +223,6 @@ public class JuegoMenu extends javax.swing.JFrame {
     public javax.swing.JLabel GitHubLabel;
     public javax.swing.JLabel InstagramLabel;
     private javax.swing.JLabel btnCerrar;
-    public javax.swing.JButton jButton1;
+    public javax.swing.JButton btnPlay;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,7 +21,7 @@ public class MainFINAL{
         
         Border bordePersonalizado = BorderFactory.createLineBorder(Color.BLACK, 3);
         jm.getRootPane().setBorder(bordePersonalizado);
-        
+        jm.setTitle("Menu");
 //        finalTEST ft = new finalTEST();
 //        ft.setVisible(true);
 //        ft.setFocusable(false);

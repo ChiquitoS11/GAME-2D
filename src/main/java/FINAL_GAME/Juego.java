@@ -15,18 +15,35 @@ public class Juego extends javax.swing.JFrame {
     // icono taskbar
     private final Imagen taskbarIMG = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
     
-    Personaje mainCharacter = new Personaje(this);
+    // limites
+    private final int x;
+    private final int y;
+    
+    // personajes
+    Personaje mainCharacter;
+    
+    
+    
     Imagen mainCharacterImg = new Imagen(getClass().getResource("/resources/ISAAC.png"));
     Imagen fondoImg = new Imagen(getClass().getResource("/resources/fondoChooseCharacter.gif"));
     
         
     public Juego(JuegoChooseCharacter jcc) {
+        
         this.setContentPane(fondoImg);
+        jcc.setVisible(false);
         
         initComponents();
         
+        // cargar limites del Frame
+        x = this.getX();
+        y= this.getY();
+        
+        // cargar datos del personaje
+        this.mainCharacter = new Personaje(this, personajeLabel);
+        
         ajustesVisuales();
-    }  
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,7 +111,9 @@ public class Juego extends javax.swing.JFrame {
 //        }
         
         if (evt.getKeyCode()==KeyEvent.VK_W) {
-            mainCharacter.moverArriba();
+//            if () {
+                mainCharacter.moverArriba();
+//            }
         }
         if (evt.getKeyCode()==KeyEvent.VK_S) {
             mainCharacter.moverAbajo();
