@@ -16,7 +16,7 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     boolean fotoMenheraX = true;
     
     // icono taskbar
-    private final Imagen iconoWindows = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
+    private final Imagen taskbarIMG = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
     
     private final Imagen monita1 = new Imagen(getClass().getResource("/resources/mashiroWallpaper.gif"));
     private final Imagen monita2 = new Imagen(getClass().getResource("/resources/asd.jpg"));
@@ -153,7 +153,7 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     private void ajustesVisuales() {
         
         // icono taskbar
-        this.setIconImage(iconoWindows.getImagenIMAGE());
+        this.setIconImage(taskbarIMG.getImagenIMAGE());
         
         // contenedor-img
         imagenes.setIcon(monita1.imgToContainer(imagenes));

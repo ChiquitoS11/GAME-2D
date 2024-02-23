@@ -14,7 +14,7 @@ import Dependencias.Imagen;
 public class JuegoMenu extends javax.swing.JFrame {
     
     // icono taskbar
-    private final Imagen iconoWindows = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
+    private final Imagen taskbarIMG = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
     
     // redes sociales
     private final Imagen ghImg = new Imagen(getClass().getResource("/resources/githubIcon.png"));
@@ -134,7 +134,7 @@ public class JuegoMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ajustesVisuales(){
-        this.setIconImage(iconoWindows.getImagenIMAGE());
+        this.setIconImage(taskbarIMG.getImagenIMAGE());
         
         GitHubLabel.setIcon(ghImg.imgToContainer(GitHubLabel));
         InstagramLabel.setIcon(igImg.imgToContainer(InstagramLabel));
