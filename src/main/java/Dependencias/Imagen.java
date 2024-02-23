@@ -40,6 +40,14 @@ public class Imagen extends JPanel {
             e.printStackTrace();
         }
     }
+
+    public Image getImagenIMAGE() {
+        return imagenIMAGE;
+    }
+
+    public ImageIcon getImagenImageIcon() {
+        return imagenImageIcon;
+    }
  
 
     // metodos

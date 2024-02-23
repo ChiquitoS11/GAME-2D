@@ -13,11 +13,18 @@ import Dependencias.Imagen;
  */
 public class JuegoMenu extends javax.swing.JFrame {
     
+    // icono de barra de tareas
+    private final Imagen iconoWindows = new Imagen(getClass().getResource("/resources/iconoWindows.jpg"));
+    
+    // redes sociales
     private final Imagen ghImg = new Imagen(getClass().getResource("/resources/githubIcon.png"));
     private final Imagen igImg = new Imagen(getClass().getResource("/resources/instagramIcon.png"));
-    private final Imagen fp = new Imagen(getClass().getResource("/resources/fondoMenu.gif"));
+    
+    // cerrar
     private final Imagen btnCerrarImg = new Imagen(getClass().getResource("/resources/btnCerrarFrame.png"));
     
+    // fondo de pantalla
+    private final Imagen fp = new Imagen(getClass().getResource("/resources/fondoMenu.gif"));
     
     /**
      * Creates new form JuegoMenu
@@ -26,6 +33,7 @@ public class JuegoMenu extends javax.swing.JFrame {
         this.setContentPane(fp);  
         
         initComponents();
+        
         
         ajustesVisuales();
     }
@@ -95,15 +103,13 @@ public class JuegoMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(InstagramLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(700, 700, 700)
                         .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GitHubLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,6 +134,8 @@ public class JuegoMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ajustesVisuales(){
+        this.setIconImage(iconoWindows.getImagenIMAGE());
+        
         GitHubLabel.setIcon(ghImg.imgToContainer(GitHubLabel));
         InstagramLabel.setIcon(igImg.imgToContainer(InstagramLabel));
         btnCerrar.setIcon(btnCerrarImg.imgToContainer(btnCerrar));

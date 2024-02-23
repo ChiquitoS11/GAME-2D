@@ -32,7 +32,7 @@ public class JuegoChooseCharacter extends javax.swing.JFrame {
     public JuegoChooseCharacter(JuegoMenu jm) {
         
         this.setContentPane(efim);    // efim
-        
+        jm.setVisible(false);
         
         initComponents();
         ajustesVisuales();

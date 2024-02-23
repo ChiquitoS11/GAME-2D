@@ -19,7 +19,7 @@ public class MainFINAL{
         jm.setResizable(false);
         jm.setLocationRelativeTo(null);
         
-        Border bordePersonalizado = BorderFactory.createLineBorder(Color.BLACK, 2);
+        Border bordePersonalizado = BorderFactory.createLineBorder(Color.BLACK, 3);
         jm.getRootPane().setBorder(bordePersonalizado);
         
 //        finalTEST ft = new finalTEST();
