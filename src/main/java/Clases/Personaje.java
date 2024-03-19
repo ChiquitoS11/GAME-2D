@@ -40,6 +40,10 @@ public class Personaje {
         return labelCharacter.getX();
     }
 
+    /**
+     * Posicion en el plano Y de donde esta el personaje
+     * @return {@code int}
+     */
     public int getY() {
         return labelCharacter.getY();
     }
