@@ -2,7 +2,10 @@ package FINAL_GAME;
 
 import Clases.Personaje;
 import Dependencias.Imagen;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -36,8 +39,8 @@ public class Juego extends javax.swing.JFrame {
         initComponents();
         
         // cargar limites del Frame
-        x = this.getX();
-        y= this.getY();
+        this.x = this.getX();
+        this.y= this.getY();
         
         // cargar datos del personaje
         this.mainCharacter = new Personaje(this, personajeLabel);
@@ -63,6 +66,9 @@ public class Juego extends javax.swing.JFrame {
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 formKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
             }
         });
 
@@ -98,22 +104,35 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        
+    
+        
+        // IMPORTANTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE        
+        Rectangle mainCharacterBounds = new Rectangle(mainCharacter.getX(), mainCharacter.getY(), mainCharacter.getWidth(), mainCharacter.getHeight());
+        Rectangle abrirPuertaBounds = new Rectangle(abrirPuerta.getX(), abrirPuerta.getY(), abrirPuerta.getWidth(), abrirPuerta.getHeight());
 
-        if (mainCharacter.getX() >= abrirPuerta.getX() &&  mainCharacter.getX() <= (abrirPuerta.getX() + abrirPuerta.getWidth()) &&
-                 mainCharacter.getY() >= abrirPuerta.getY() &&  mainCharacter.getY() <= (abrirPuerta.getY() + abrirPuerta.getHeight())) {
-            activarSecreto = true;
-        } else {
-            activarSecreto = false;
-        }
+        activarSecreto = mainCharacterBounds.intersects(abrirPuertaBounds);
+        
+//        if (mainCharacter.getX() >= abrirPuerta.getX() &&  mainCharacter.getX() <= (abrirPuerta.getX() + abrirPuerta.getWidth()) &&
+//                 mainCharacter.getY() >= abrirPuerta.getY() &&  mainCharacter.getY() <= (abrirPuerta.getY() + abrirPuerta.getHeight())) {
+//            activarSecreto = true;
+//        } else {
+//            activarSecreto = false;
+//        }
 //        if (evt.getKeyCode()==KeyEvent.VK_W && evt.getKeyCode()==KeyEvent.VK_A) {
 //            mainCharacter.moverArriba();
 //            mainCharacter.moverIzquierda();
 //        }
         
         if (evt.getKeyCode()==KeyEvent.VK_W) {
-//            if () {
+            mainCharacter.haciaArriba = true;
+            
+
+            try {
                 mainCharacter.moverArriba();
-//            }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Juego.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (evt.getKeyCode()==KeyEvent.VK_S) {
             mainCharacter.moverAbajo();
@@ -127,6 +146,12 @@ public class Juego extends javax.swing.JFrame {
 
         System.out.println(activarSecreto);
     }//GEN-LAST:event_formKeyPressed
+
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+        if (evt.getKeyCode()==KeyEvent.VK_W) {
+            mainCharacter.haciaArriba = false;
+        }
+    }//GEN-LAST:event_formKeyReleased
 
     public void ajustesVisuales(){
         this.setIconImage(taskbarIMG.getImagenIMAGE());
